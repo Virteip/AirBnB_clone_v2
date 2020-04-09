@@ -14,6 +14,6 @@ sudo echo "<html>
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu /data
 sudo chgrp -R ubuntu /data
-sudo sed -i "42i \\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}" /etc/nginx/sites-enabled/default
+sudo sed -i "42i \\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}" /etc/nginx/sites-available/default
 sudo service nginx restart
 exit 0
