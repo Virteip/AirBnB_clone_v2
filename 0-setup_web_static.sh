@@ -7,9 +7,7 @@ sudo mkdir -p /data/web_static/releases/test/
 sudo echo "Holberton" > /data/web_static/releases/test/index.html
 rm -rf /data/web_static/current
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
-sudo chown -R ubuntu /data
-sudo chgrp -R ubuntu /data
+sudo chown -R ubuntu:ubuntu /data
 sudo sed -i "38i \\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}" /etc/nginx/sites-enabled/default
-sudo service nginx stop
-sudo service nginx start
+sudo service nginx restart
 exit 0
