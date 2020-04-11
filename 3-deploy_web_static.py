@@ -34,9 +34,8 @@ def do_pack():
           format(datetime.now().strftime('%Y%m%d%H%M%S'), file_size))
 
     with hide('running'):
-        archive_path = local("versions/web_static_{:s}.tgz".
-                             format(datetime.now().strftime('%Y%m%d%H%M%S')),
-                             capture=True)
+        archive_path = "versions/web_static_{:s}.tgz".\
+                             format(datetime.now().strftime('%Y%m%d%H%M%S'))
     return archive_path
 
 
