@@ -33,13 +33,14 @@ def do_pack():
     print("web_static packed: versions/web_static_{:s}.tgz -> {:}Bytes".
           format(datetime.now().strftime('%Y%m%d%H%M%S'), file_size))
 
-    archive_path = "versions/web_static_{:s}.tgz".format(
-        datetime.now().strftime('%Y%m%d%H%M%S'))
-
+    with hide('running'):
+        archive_path = local("versions/web_static_{:s}.tgz".
+                             format(datetime.now().strftime('%Y%m%d%H%M%S')),
+                             capture=True)
     return archive_path
 
 
-def do_deploy(archive_path):
+def do_deploy():
     """
     Upload backup to server
     """
