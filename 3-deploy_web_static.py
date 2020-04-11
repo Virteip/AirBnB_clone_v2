@@ -40,7 +40,7 @@ def do_pack():
     return archive_path
 
 
-def do_deploy():
+def do_deploy(archive_path):
     """
     Upload backup to server
     """
@@ -63,5 +63,16 @@ def do_deploy():
             format(clean_name))
         print('New version deployed!')
         return True
+    else:
+        return False
+
+
+def deploy():
+    """
+    Full deployment
+    """
+    archive_path = do_pack()
+    if path.exists(archive_path):
+        return do_deploy(archive_path)
     else:
         return False
