@@ -46,7 +46,7 @@ def to_n_or_not_to_n(n):
 def render_n_if_n(n):
     """ display template if n is integer
     """
-    return render_template('5-number.html', name=n)
+    return render_template('5-number.html', n=n)
 
 
 if __name__ == '__main__':
