@@ -24,7 +24,7 @@ def hello_hbnb():
 def what_is_c(text):
     """ display what is c
     """
-    return 'C %s' % text.replace('_', ' ')
+    return "C {}".format(text.replace('_', ' '))
 
 
 @app.route('/python/', strict_slashes=False)
@@ -32,14 +32,14 @@ def what_is_c(text):
 def what_is_python(text="is cool"):
     """ display what is python
     """
-    return 'Python %s' % text.replace('_', ' ')
+    return "Python {}".format(text.replace('_', ' '))
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def to_n_or_not_to_n(n):
     """ display if n is integer
     """
-    return '%d is a number' % n
+    return "{} is a number".format(n)
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
