@@ -31,5 +31,11 @@ def what_is_python(text="is cool"):
     return 'Python %s' % text.replace('_', ' ')
 
 
+@app.route('/number/<int:n>', strict_slashes=False)
+def to_n_or_not_to_n(n):
+    """ display if n is integer
+    """
+    return '%d is a number' % n
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
