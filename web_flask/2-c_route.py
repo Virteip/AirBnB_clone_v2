@@ -23,7 +23,7 @@ def hello_hbnb():
 def what_is_c(text):
     """ display what is c
     """
-    return 'C %s' % text.replace('_',' ')
+    return 'C %s' % text.replace('_', ' ')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
