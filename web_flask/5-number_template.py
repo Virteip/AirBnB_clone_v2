@@ -24,7 +24,7 @@ def hello_hbnb():
 def what_is_c(text):
     """ display what is c
     """
-    return 'C %s' % text
+    return 'C %s' % text.replace('_', ' ')
 
 
 @app.route('/python/', strict_slashes=False)
