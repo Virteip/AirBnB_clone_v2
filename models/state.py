@@ -12,20 +12,20 @@ class State(BaseModel, Base):
     Attributes:
         name: input name
     """
-     if environ.get('HBNB_TYPE_STORAGE') == "db":
-         __tablename__ = "states"
-         name = Column(String(128), nullable=False)
-         cities = relationship("City", backref="state",
-                               cascade="all, delete, delete-orphan")
-     else:
-         @property
-         def cities(self):
-             """
-             List cities
-             """
-             city_query = models.storage.all(City)
-             city_list = []
-             for c_value in city_query.values():
-                 if c_value.state_id == self.id:
-                     city_list.append(c_value)
-             return c_value
+    __tablename__ = "states"
+    name = Column(String(128), nullable=False)
+    if environ.get('HBNB_TYPE_STORAGE') == "db":
+        cities = relationship("City", backref="state",
+                              cascade="all, delete, delete-orphan")
+    else:
+        @property
+        def cities(self):
+            """
+            List cities
+            """
+            city_query = models.storage.all(City)
+            city_list = []
+            for c_value in city_query.values():
+                if c_value.state_id == self.id:
+                    city_list.append(c_value)
+            return c_value
