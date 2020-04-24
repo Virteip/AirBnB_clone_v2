@@ -72,4 +72,4 @@ class FileStorage:
         """
         call reload function for deserialization purposes
         """
-        self.reload()
+        self.__session.close()
